@@ -30,8 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
         if (mysqli_stmt_fetch($stmt)) {
-          if(password_verify($password, $hashed_password)){
-            
+          if (password_verify($password, $hashed_password)) {
+
             //setting the session for user login status
             session_start();
             $_SESSION["username"] = $username;
@@ -39,15 +39,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["isLoggedIn"] = true;
 
             header("location: welcome.php");
-
-          }else{
+          } else {
             echo "<h1>Wrong Password!</h1>";
           }
         }
-      }else{
-        echo "No Such User Found!";
+      } else {
+        echo ("<script LANGUAGE='JavaScript'>
+    window.alert('No, Such user found!');
+    window.location.href='form.php';
+    </script>");
       }
-    }else{
+    } else {
       echo "Something went wrong in execution!";
     }
 
