@@ -34,8 +34,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   //checking password validation
   if(empty(trim($_POST["reg_pass"]))){
     $password_err = "Password can not be empty!";
-  }elseif(strlen(trim($_POST["reg_pass"])) < 8){
-    $password_err = "Password should be of 8 characters atleast!";
+    echo $password_err;
+  }elseif(strlen(trim($_POST["reg_pass"])) < 6){
+    $password_err = "Password should be of 6 characters atleast!";
+    echo $password_err;
   }else{
     $password = trim($_POST["reg_pass"]);
   }
@@ -52,6 +54,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
       $param_password = password_hash($password, PASSWORD_DEFAULT);
 
       if(mysqli_stmt_execute($stmt)){
+        session_start();
+        $_SESSION["username"] = $username;
+        $_SESSION["isLoggedIn"] = true;
+        
         header("location: welcome.php");
       }else{
         echo "Something went wrong!";

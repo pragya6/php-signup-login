@@ -42,11 +42,11 @@
       <form action="login.php" method="POST">
         <div class="mb-3">
           <label for="formGroupExampleInput" class="form-label">Username</label>
-          <input type="text" class="form-control" name="log_name" id="formGroupExampleInput" placeholder="Enter Your Name">
+          <input type="text" class="form-control" name="log_name" id="formGroupExampleInput" placeholder="Enter Your Name" required>
         </div>
         <div class="mb-3">
           <label for="formGroupExampleInput" class="form-label">Password</label>
-          <input type="password" class="form-control" name="log_pass" id="formGroupExampleInput" placeholder="Enter Your Password">
+          <input type="password" class="form-control" name="log_pass" id="formGroupExampleInput" placeholder="Enter Your Password" required>
         </div>
         <button class="btn btn-primary mx-auto" type="submit">Login</button>
       </form>
@@ -56,11 +56,11 @@
       <form action="register.php" method="POST">
         <div class="mb-3">
           <label for="formGroupExampleInput" class="form-label">Username</label>
-          <input type="text" class="form-control" name="reg_name" id="formGroupExampleInput" placeholder="Enter Your Name">
+          <input type="text" class="form-control" name="reg_name" id="formGroupExampleInput" placeholder="Enter Your Name" required>
         </div>
         <div class="mb-3">
           <label for="formGroupExampleInput" class="form-label">Password</label>
-          <input type="password" class="form-control" name="reg_pass" id="formGroupExampleInput" placeholder="Enter Your Password">
+          <input type="password" class="form-control" name="reg_pass" id="formGroupExampleInput" placeholder="Enter Your Password" required>
         </div>
         <button class="btn btn-primary mx-auto" type="submit">Register</button>
       </form>
